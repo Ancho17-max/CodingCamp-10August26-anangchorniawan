@@ -1198,8 +1198,16 @@
 
                         return;
                     }
+// Cek apakah task sudah ada
+const duplicateTask = tasks.some(function(task) {
+    return task.text.toLowerCase() === text.toLowerCase();
+});
 
-
+if (duplicateTask) {
+    alert("Task tersebut sudah ada!");
+    input.focus();
+    return;
+}
                     tasks.push({
 
                         text: text,
